@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top-level menu -->
+    <menuitem id="menu_poll_root" name="Polling" sequence="10"/>
+
+    <!-- Sub-menu for Questions -->
+    <menuitem id="menu_poll_questions"
+              name="Poll Questions"
+              parent="menu_poll_root"
+              action="action_poll_question"
+              sequence="20"/>
+</odoo>

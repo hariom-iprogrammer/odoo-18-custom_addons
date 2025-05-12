@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Top-level menu -->
+    <menuitem id="estate_menu_root" name="Estate"/>
+
+    <!-- Second-level menu -->
+    <menuitem id="estate_menu_properties" name="Properties"
+              parent="estate_menu_root"/>
+
+    <!-- Third-level menu with action -->
+    <menuitem id="estate_menu_properties_list" name="Properties"
+              parent="estate_menu_properties"
+              action="action_estate_property"/>
+</odoo>
