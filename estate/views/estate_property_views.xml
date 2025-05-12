@@ -35,6 +35,7 @@
                                 <field name="garden"/>
                                 <field name="garden_area"/>
                                 <field name="garden_orientation"/>
+                                <field name="state"/>
                             </group>
                         </page>
                     </notebook>
@@ -72,26 +73,27 @@
                 <field name="living_area" string="Living Area (sqm)"/>
                 <field name="expected_price" string="Expected Price"/>
                 <field name="selling_price" string="Selling Price"/>
-                <field name="date_availability" string="Available From"/>
+                <field name="state" string="Available"/>
             </list>
         </field>
     </record>
 
-    <!-- Search View (merged and updated) -->
+    <!-- Search View-->
     <record id="view_estate_property_search" model="ir.ui.view">
         <field name="name">estate.property.search</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
-            <search>
-                <field name="name" string="Title"/>
-                <field name="postcode"/>
+            <search string="Properties">
+                <field name="name" string="Property Name"/>
                 <field name="expected_price"/>
                 <field name="selling_price"/>
-                <field name="bedrooms"/>
-                <filter name="has_garden" string="With Garden" domain="[('garden','=',True)]"/>
-                <!-- <filter name="available" string="Available" domain="[('state', 'in', ['new', 'offer_received'])]"/> -->
-                <group expand="1" string="Group By">
-                    <filter name="group_by_postcode" string="Postcode" context="{'group_by': 'postcode'}"/>
+                <field name="date_availability"/>
+                <field name="garden"/>
+
+                <filter name="available" string="Available" domain="[('state', '=', 'new')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_garden" string="Garden" context="{'group_by': 'garden'}"/>
+                    <filter name="group_by_date" string="Available Date" context="{'group_by': 'date_availability'}"/>
                 </group>
             </search>
         </field>
