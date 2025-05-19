@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Top-level menu -->
-    <menuitem id="estate_menu_root" name="Estate"/>
+    <menuitem id="estate_menu_root" name="Real Estate">
+        <menuitem id="estate_menu_properties" name="Advertisements">
+            <menuitem id="estate_menu_properties_list" action="action_estate_property"/>
+        </menuitem>
 
-    <!-- Second-level menu -->
-    <menuitem id="estate_menu_properties" name="Properties"
-              parent="estate_menu_root"/>
-
-    <!-- Third-level menu with action -->
-    <menuitem id="estate_menu_properties_list" name="Properties"
-              parent="estate_menu_properties"
-              action="action_estate_property"/>
+        <menuitem id="estate_property_settings_menu" name="Settings">
+            <menuitem id="estate_property_type_menu_action" action="estate_property_type_action"/>
+            <menuitem id="estate_property_tag_menu_action" action="estate_property_tag_action"/>
+        </menuitem>
+    </menuitem>
 </odoo>
